@@ -1,0 +1,17 @@
+# Site settings
+title: Flagr
+email: ranisalt+flagr@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+    Use whichever flag (or really just any image) as a mask over your Facebook
+    profile picture and stop whining about selective comotion :) change starts
+    with you!
+baseurl: "/flagr" # the subpath of your site, e.g. /blog
+url: "https://ranisalt.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+sass:
+    style: :compressed
+
+# Custom settings
+backend: flagr.herokuapp.com

@@ -1,0 +1,91 @@
+/**
+ * Site header
+ */
+.site-header {
+    border-top: 5px solid $grey-color-dark;
+    border-bottom: 1px solid $grey-color-light;
+    min-height: 56px;
+
+    // Positioning context for the mobile navigation icon
+    position: relative;
+}
+
+.site-title {
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+
+    &,
+    &:visited {
+        color: $grey-color-dark;
+    }
+}
+
+@include media-query($on-laptop) {
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+
+    .pure-button {
+		border-radius: 4px;
+        margin-bottom: 5px;
+        text-align: center;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-select {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: all .1s;
+        width: 200px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #E6E6E6;
+        }
+    }
+
+	.button-active,
+    .button-submit {
+		color: white;
+	}
+
+	.button-active {
+		background: rgb(28, 184, 65); /* this is a green */
+	}
+
+    input[type="file"], input[type="submit"] {
+        display: none;
+    }
+
+    .result img {
+        max-width: $content-width;
+    }
+}

@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">{{ site.title }}</h1>
+
+  <form action="https://{{ site.backend }}/blend" method="post" name="form" enctype="multipart/form-data">
+
+    <div class="pure-button button-select">
+      <span>Your picture...</span>
+      <input type="file" name="picture" />
+    </div>
+
+    <div class="pure-button button-select">
+      <span>Your flag...</span>
+      <input type="file" name="flag" />
+    </div>
+
+    <div class="pure-button pure-button-primary button-submit">
+      <span>Flag me!</span>
+    </div>
+
+  </form>
+
+  <div class="result">
+  </div>
+
+</div>
