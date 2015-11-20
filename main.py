@@ -36,7 +36,7 @@ def upload(image):
     return key
 
 
-@app.route('/blend', methods=['POST'])
+@app.route('/blend', methods=['POST', 'OPTIONS'])
 def blend():
     picture, flag = request.files['picture'], request.files['flag']
 
@@ -64,7 +64,12 @@ def blend():
             key = upload(background.convert('png'))
 
     # return json object with url to newly uploaded file
-    return jsonify(url=key.generate_url(app.config['AWS_EXPIRES_IN']))
+    response = jsonify(url=key.generate_url(app.config['AWS_EXPIRES_IN']))
+    response.headers.add('Access-Control-Allow-Origin',
+                         app.config['ALLOWED_ORIGIN'])
+    response.headers.add('Access-Control-Allow-Credentials',
+                         'true')
+    return response
 
 
 if __name__ == '__main__':

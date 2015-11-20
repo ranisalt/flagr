@@ -2,7 +2,7 @@ import os
 
 # Deployment options
 # APPLICATION_ROOT = '/flagr'
-# SERVER_NAME = 'ranisalt.github.io'
+ALLOWED_ORIGIN = 'https://ranisalt.github.io'
 MAX_CONTENT_LENGTH = 2 * 1024 * 1024  # 2 megabytes
 
 # Amazon S3 options
