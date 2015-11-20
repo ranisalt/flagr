@@ -3,6 +3,8 @@
 import boto
 import config
 import hashlib
+import random
+import string
 from boto.s3.key import Key
 from flask import Flask, abort, jsonify, request, send_file
 from wand.image import Color, Image
@@ -16,14 +18,13 @@ def upload(image):
     bucket = s3.get_bucket(app.config['AWS_BUCKET_NAME'])
     blob = image.make_blob()
 
-    h = hashlib.md5()
-
-    # generate filename from 32 random letters
-    # filename = ''.join(random.sample(string.ascii_letters, 32))
+    # generate filename from 8 random letters
+    filename = ''.join(random.sample(string.ascii_letters, 8))
 
     # generate filename from image md5
-    h.update(blob)
-    filename = h.hexdigest()
+    # h = hashlib.md5()
+    # h.update(blob)
+    # filename = h.hexdigest()
 
     key = Key(bucket)
 
