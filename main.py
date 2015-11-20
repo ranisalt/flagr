@@ -47,7 +47,7 @@ def blend():
 
     with Image(file=flag) as foreground:
         with Image(height=foreground.height, width=foreground.width,
-                   background=Color('gray60')) as alpha:
+                   background=Color('gray80')) as alpha:
             # this will copy the opacity of a 60% opacity image to foreground
             foreground.composite_channel('default_channels', alpha,
                                          'copy_opacity', left=0, top=0)
